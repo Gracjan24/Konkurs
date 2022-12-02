@@ -16,21 +16,51 @@
         </form>
     </div>
     <div class="blok">
+        <!-- <button onclick></button> -->
         <?php
-            if(isset($_POST['losowanie'])) {
-                $conn = mysqli_connect('localhost', 'root', '', 'baza');
-                $zapytanie = "SELECT `pol`, `ang`, `bad`, `wrong` FROM slownictwo WHERE id = RAND()";
-                $result = mysqli_query($conn, $zapytanie);
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $_SESSION['pol'] = $row['pol'];
-                        $_SESSION['ang'] = $row['ang'];
-                        $_SESSION['bad'] = $row['bad'];
-                        $_SESSION['wrong'] = $row['wrong'];
+            // if(isset($_POST['losowanie'])) {
+            //     $conn = mysqli_connect('localhost', 'root', '', 'baza');
+            //     $zapytanie = "SELECT `pol`, `ang`, `bad`, `wrong` FROM slownictwo WHERE id = RAND()";
+            //     $result = mysqli_query($conn, $zapytanie);
+            //     if (mysqli_num_rows($result) > 0) {
+            //         while ($row = mysqli_fetch_assoc($result)) {
+            //             $_SESSION['pol'] = $row['pol'];
+            //             $_SESSION['ang'] = $row['ang'];
+            //             $_SESSION['bad'] = $row['bad'];
+            //             $_SESSION['wrong'] = $row['wrong'];
+            //         }
+            //     }
+            //     echo '<h4>Przetlumacz wyraz na jezyk angielski</h4>';
+                $w1 = $w2 = $w3 = true;
+                for ($i = 0; $i < 3; $i++) {
+                    $w = rand(1,3);
+                    if ($w == 1) {
+                        if ($w1 == true) {
+                            echo 'ang';
+                            $w1 = false;
+                        } else {
+                            $i--;
+                        }
+                    }
+                    if ($w == 2) {
+                        if ($w2 == true) {
+                            echo 'bad';
+                            $w2 = false;
+                        } else {
+                            $i--;
+                        }
+                    }
+                    if ($w == 1) {
+                        if ($w3 == true) {
+                            echo 'wrong';
+                            $w3 = false;
+                        } else {
+                            $i--;
+                        }
                     }
                 }
-                echo '<h4>Przetlumacz wyraz na jezyk angielski</h4>';
             }
+
         ?>
     </div>
 </body>
