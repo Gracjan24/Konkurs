@@ -43,13 +43,49 @@
         </form>
         </div>
         <div class="main">
-                <h1>Kalgon</h1>
+                <form method="post" class="formularz">
+                    <label for="tabela">Wybierz tabelę, do której ma być wprowadzone słówko</label>
+                    <select name="tabela" id="tabela">
+                        <option value="zawod_it">Technik Informatyk</option>
+                        <option value="zawod_kuch">Technik Żywienia i Usług Gastronomicznych</option>
+                    </select> <br>
+                    <label for="ang">Słowo po angielsku: </label>
+                    <input type="text" name="ang"> <br>
+                    <label for="pol">Znaczenie po polsku: </label>
+                    <input type="text" name="pol"> <br>
+                    <label for="wrong">Błędna odpowiedź 1 (do zadania 2): </label>
+                    <input type="text" name="wrong"> <br>
+                    <label for="bad">Błędna odpowiedź 2 (do zadania 2): </label>
+                    <input type="text" name="bad"> <br>
+                    <label for="text">Definicja (do zadania 3):</label>
+                    <input type="text" name="text"> <br>
+                    <button type="reset">Resetuj</button>
+                    <button type="submit">Prześlij</button>
+                </form>
+                <?php
+                $conn = mysqli_connect("localhost", "root", "", "baza");
+                if(isset($_POST['text'])) {
+                    $tabela = $_POST['tabela'];
+                    $ang = $_POST['ang'];
+                    $pol = $_POST['pol'];
+                    $wrong = $_POST['wrong'];
+                    $bad = $_POST['bad'];
+                    $textt = $_POST['text'];
+                    $zap1 = "INSERT INTO $tabela (ang, pol, wrong, bad, text) VALUES ('$ang','$pol','$wrong','$bad','$textt');";
+                    $wynik1 = mysqli_query($conn, $zap1);
+                    // echo mysqli_error($conn);
+                    if(mysqli_error($conn) == null) {
+                        echo "<p class='blad'>Słówko zostało wprowadzone prawidłowo do bazy danych</p>";
+                    }else {
+                        echo "<p class='blad'>Wystąpił błąd, proszę sprawdzić poprawność wprowadzonych danych (aktualnie nie można używać znaków { ' ` oraz cudzysłowów})</p> ";
+                    }
+                }
+                ?>
     </div>
     <?php
         
     ?>
     <div class="bar" id="bar">
-        <!-- <a href="javascript:void(0)" class="cbar" onclick="closebar()">&times</a> -->
         <a href="./strona.php">Zadanie 1</a>
         <a href="./zad2.php">Zadanie 2</a>
         <a href="./zad3.php">Zadanie 3</a>
