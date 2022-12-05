@@ -14,8 +14,8 @@
 </head>
 <body>
 <div class="pasek">
-    <img src="logo.png" alt="logo" class="logo">
-    <?php echo '<h5>Witaj,'. (new Auth())->getName(@$_SESSION['id_user']).'</h5>'; ?>
+    <img src="logo.png" title="ZSCKU" alt="logo" class="logo">
+    <?php echo '<aside><h5>Witaj, '. (new Auth())->getName(@$_SESSION['id_user']).'</h5></aside>'; ?>
     <img src="./bars-solid.svg" class="menu" alt="icon" onclick="baroc()">
     <img src="./right-from-bracket-solid.svg" title="wyloguj" class="wyloguj" alt="Wyloguj" onclick="wyloguj()">
         </div>
