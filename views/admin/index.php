@@ -17,7 +17,7 @@
     <img src="logo.png" alt="logo" class="logo">
     <?php echo '<h5>Witaj,'. (new Auth())->getName(@$_SESSION['id_user']).'</h5>'; ?>
     <img src="./bars-solid.svg" class="menu" alt="icon" onclick="baroc()">
-    <img src="./right-from-bracket-solid.svg" class="wyloguj" alt="Wyloguj" onclick="wyloguj()">
+    <img src="./right-from-bracket-solid.svg" title="wyloguj" class="wyloguj" alt="Wyloguj" onclick="wyloguj()">
         </div>
        
         <!-- <a href='?action=logout' name='wyloguj'>Wyloguj</a> -->
