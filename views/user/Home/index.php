@@ -15,7 +15,6 @@
 <body>
 <div class="pasek">
     <img src="../../../image/logopasek.png" alt="logo" title="ZSCKU" class="logo">
-    <?php echo '<aside><h5>Witaj,'. (new Auth())->getName(@$_SESSION['id_user']).'</h5></aside>'; ?>
     <img src="../../../style/bars-solid.svg" class="menu" title="Otwórz menu" alt="icon" onclick="baroc()">
     <img src="../../../style/right-from-bracket-solid.svg" title="Wyloguj się" class="wyloguj" alt="Wyloguj" onclick="wyloguj()">
         </div>
@@ -41,9 +40,17 @@
         <form method="post">   
                 <button name="wyloguj" id="guzikwylogowywania"></button>  
         </form>
+        <?php //echo '<h5 id="log">Witaj,'. (new Auth())->getName(@$_SESSION['id_user']).'</h5>';
+        echo "<option id='log' value='".(new Auth())->getName(@$_SESSION['id_user'])."'</option>";
+        // echo '<script>var logg = document.getElementById("log").value;
+        // document.getElementById("glog").innerText = "<h5>Witaj, "+ logg +"</h5>";
+        // </script>';
+        ?>
         </div>
         <div class="main">
-                <h1>Kalgon</h1>
+            <h1>Kalgon</h1>
+            <aside id="glog">
+            </aside>
     </div>
     <?php
         
@@ -63,6 +70,8 @@
     <script>
         var barstate = false;
         var advstate = false;
+        var logg = document.getElementById("log").value;
+        document.getElementById("glog").innerHTML = "<h5>Witaj, "+ logg +"</h5>";
     function baroc() {
         if(barstate == false) {
             document.getElementById("bar").style.width="250px";
