@@ -15,7 +15,6 @@
 <body>
 <div class="pasek">
 <img src="../../../image/logopasek.png" alt="logo" title="ZSCKU" class="logo">
-    <?php echo '<aside><h5>Witaj,'. (new Auth())->getName(@$_SESSION['id_user']).'</h5></aside>'; ?>
     <img src="../../../style/bars-solid.svg" class="menu" title="Otwórz menu" alt="icon" onclick="baroc()">
     <img src="../../../style/right-from-bracket-solid.svg" title="Wyloguj się" class="wyloguj" alt="Wyloguj" onclick="wyloguj()">
         </div>
