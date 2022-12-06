@@ -40,7 +40,7 @@
             <?php
                 if(isset($_POST['sprawdz'])) {
                     $answer = $_POST['answer'];
-                    // echo $answer;
+                    echo $answer;
                     if ($answer == $_SESSION['ang']) {
                         echo 'dobrze';
                     } else {
