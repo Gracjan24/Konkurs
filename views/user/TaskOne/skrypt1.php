@@ -19,9 +19,9 @@
             Przetlumacz wyraz na jezyk angielski<br><br>
             <?php
                 if(isset($_POST['losowanie'])) {
-                    $conn = mysqli_connect('localhost', 'root', '', 'konkurs');
-                    $rand = rand(1, 6);
-                    $zapytanie_pol = "SELECT `pol`, `ang` FROM slownictwo WHERE id = ".$rand."";
+                    $conn = mysqli_connect('localhost', 'root', '', 'baza');
+                    $rand = rand(1, 4);
+                    $zapytanie_pol = "SELECT `pol`, `ang` FROM zawod_it WHERE id = ".$rand."";
                     $result = mysqli_query($conn, $zapytanie_pol);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {

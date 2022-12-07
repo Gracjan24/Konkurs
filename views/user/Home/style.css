@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    padding: 0;
+}
+.baner {
+    width: 100%;
+    height: 15vh;
+    background-color: #2367dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 12vh;
+    margin-right: 1%;
+}
+.baner > p {
+    color: white;
+    font-size: 5vh;
+}
+
+.navv {
+    width: 100%;
+    height: 7vh;
+    background-color: #387cf0;
+}
+.nav {
+    margin: auto;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button {
+    width: 90px;
+    margin: auto;
+    outline: none;
+    border: none;
+    background-color: white;
+    padding: 1vh 10px;
+    border-radius: 6px;
+    transition-duration: 0.4s;
+}
+button:hover {
+    background-color: #2367dd;
+    color: white;
+}
+
+.glowna {
+    width: 100%;
+    height: 78vh;
+
+}
+.kontent {
+    margin: auto;
+    width: 60%;
+    height: 100%;
+}
+.kontent > p {
+    padding: 5vh 33%;
+}
+.kontent > img {
+    padding: 5vh 33%;
+    width: 34%;
+}
