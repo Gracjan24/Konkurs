@@ -17,7 +17,7 @@
         </p>
     </div>
     <div class="navv">
-        <div class="nav">
+        <div class="nav" id="nav">
             <!-- <button>zadanie 1</button>
             <button>zadanie 2</button>
             <button>zadanie 3</button>
@@ -27,6 +27,7 @@
             <button>glowna</button> -->
             <img src="../../../style/house-solid.svg" id="glowna" title="Wróć do strony głównej" alt="glowna" onclick="window.open('./index.php','_self')">
             <p onclick="baroc()">▼ Zadania</p>
+            <p> </p>
             <p onclick="baroc1()">Narzędzia ▼</p>
             <img src="../../../style/right-from-bracket-solid.svg" id="logout" title="Wyloguj się" onclick="wyloguj()" alt="Wyloguj się">
         </div>
