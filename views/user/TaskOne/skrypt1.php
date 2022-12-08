@@ -74,7 +74,7 @@
             ?>
             </div>
             <div class="spr">
-                <form method="post">
+                <form method="post" autocomplete="off">
                     <input type="text" name="answer" id="answer" placeholder="tu wprowadz odpowiedz" required>
                     <button name="sprawdz" id="spr">Sprawdz</button>
                 </form>

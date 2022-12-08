@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../Home/style1.css">
     <link rel="stylesheet" href="../Home/style.css" class="css">
     <?php include '../../../classes/auth.php'; ?>
 </head>
@@ -17,7 +18,7 @@
         </p>
     </div>
     <div class="navv">
-        <div class="nav">
+        <div class="nav" id="nav">
             <!-- <button>zadanie 1</button>
             <button>zadanie 2</button>
             <button>zadanie 3</button>
@@ -25,7 +26,7 @@
             <button>pomoc</button>
             <button>wyloguj</button>
             <button>glowna</button> -->
-            <img src="../../../style/house-solid.svg" id="glowna" title="Wróć do strony głównej" alt="glowna" onclick="window.open('../Home/index.php','_self')">
+            <img src="../../../style/house-solid.svg" id="glowna" title="Wróć do strony głównej" alt="glowna" onclick="window.open('./index.php','_self')">
             <p onclick="baroc()">▼ Zadania</p>
             <p> </p>
             <p onclick="baroc1()">Narzędzia ▼</p>
@@ -43,46 +44,62 @@
     </div>
     <div class="glowna">
         <div class="kontent">
-            <div class="main">
-        <form method="post" class="formularz" autocomplete="off">
-                    <label for="tabela">Wybierz tabelę, do której ma być wprowadzone słówko</label>
-                    <select name="tabela" id="tabela">
-                        <option value="zawod_it">Technik Informatyk</option>
-                        <option value="zawod_kuch">Technik Żywienia i Usług Gastronomicznych</option>
-                    </select> <br>
-                    <label for="ang">Słowo po angielsku: </label>
-                    <input type="text" name="ang"> <br>
-                    <label for="pol">Znaczenie po polsku: </label>
-                    <input type="text" name="pol"> <br>
-                    <label for="wrong">Błędna odpowiedź 1 (do zadania 2): </label>
-                    <input type="text" name="wrong"> <br>
-                    <label for="bad">Błędna odpowiedź 2 (do zadania 2): </label>
-                    <input type="text" name="bad"> <br>
-                    <label for="text">Definicja (do zadania 3):</label>
-                    <input type="text" name="text"> <br>
-                    <button type="reset">Resetuj</button>
-                    <button type="submit">Prześlij</button>
-                </form>
-                <?php
-                $conn = mysqli_connect("localhost", "root", "", "baza");
-                if(isset($_POST['text'])) {
-                    $tabela = $_POST['tabela'];
-                    $ang = $_POST['ang'];
-                    $pol = $_POST['pol'];
-                    $wrong = $_POST['wrong'];
-                    $bad = $_POST['bad'];
-                    $textt = $_POST['text'];
-                    $zap1 = "INSERT INTO $tabela (ang, pol, wrong, bad, text) VALUES ('$ang','$pol','$wrong','$bad','$textt');";
-                    $wynik1 = mysqli_query($conn, $zap1);
-                    // echo mysqli_error($conn);
-                    if(mysqli_error($conn) == null) {
-                        echo "<p class='blad'>Słówko zostało wprowadzone prawidłowo do bazy danych</p>";
-                    }else {
-                        echo "<p class='blad'>Wystąpił błąd, proszę sprawdzić poprawność wprowadzonych danych (aktualnie nie można używać znaków { ' ` oraz cudzysłowów})</p> ";
+        <form method="post">
+            <button name="losowanie">Losuj</button>
+        </form>
+        <div class="answerBlok"></div>
+    </div>
+    <div class="blok">
+        <!-- <button onclick></button> -->
+        <?php
+            if(isset($_POST['losowanie'])) {
+                $conn = mysqli_connect('localhost', 'root', '', 'konkurs');
+                $zapytanie = "SELECT `pol`, `ang`, `bad`, `wrong` FROM slownictwo WHERE id = 1";
+                $result = mysqli_query($conn, $zapytanie);
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $_SESSION['pol'] = $row['pol'];
+                        $_SESSION['ang'] = $row['ang'];
+                        $_SESSION['bad'] = $row['bad'];
+                        $_SESSION['wrong'] = $row['wrong'];
                     }
                 }
-                ?>
-            </div>
+                echo $_SESSION['pol'];
+
+                echo '<h4>Przetlumacz wyraz na jezyk angielski</h4>';
+                $r = rand(1,6);
+                if ($r == 1) {
+                    echo '<div class="answerBlok">'.$_SESSION['ang'].'</div>';
+                    echo '<div class="answerBlok">'.$_SESSION['bad'].'</div>';
+                    echo '<div class="answerBlok">'.$_SESSION['wrong'].'</div>';
+                }
+                if ($r == 2) {
+                    echo '<div class="answerBlok">'.$_SESSION['wrong'].'</div>';
+                    echo '<div class="answerBlok">'.$_SESSION['ang'].'</div>';
+                    echo '<div class="answerBlok">'.$_SESSION['bad'].'</div>';
+                }
+                if ($r == 3) {
+                    echo '<div class="answerBlok">'.$_SESSION['bad'].'</div>';
+                    echo '<div class="answerBlok">'.$_SESSION['wrong'].'</div>';
+                    echo '<div class="answerBlok">'.$_SESSION['ang'].'</div>';
+                }
+                if ($r == 4) {
+                    echo '<div class="answerBlok">'.$_SESSION['wrong'].'</div>';
+                    echo '<div class="answerBlok">'.$_SESSION['bad'].'</div>';
+                    echo '<div class="answerBlok">'.$_SESSION['ang'].'</div>';
+                }
+                if ($r == 5) {
+                    echo '<div class="answerBlok">'.$_SESSION['ang'].'</div>';
+                    echo '<div class="answerBlok">'.$_SESSION['wrong'].'</div>';
+                    echo '<div class="answerBlok">'.$_SESSION['bad'].'</div>';
+                }
+                if ($r == 6) {
+                    echo '<div class="answerBlok">'.$_SESSION['bad'].'</div>';
+                    echo '<div class="answerBlok">'.$_SESSION['ang'].'</div>';
+                    echo '<div class="answerBlok">'.$_SESSION['wrong'].'</div>';
+                }
+            }
+        ?>
         </div>
     </div>
     <div class="hidden">

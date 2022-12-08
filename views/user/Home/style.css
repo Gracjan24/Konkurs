@@ -64,6 +64,11 @@ button:hover {
     width: 60%;
     height: 100%;
     min-width: 500px;
+    text-align: center;
+}
+.kontent > form {
+    margin-top: 5vh;
+    font-size: larger;
 }
 .kontent > p {
     padding: 5vh 33%;
@@ -143,4 +148,8 @@ button:hover {
 .main {
     margin-top: 50px;
     text-align: center;
+}
+.kontent > a {
+    text-decoration: none;
+    font-size: larger;
 }

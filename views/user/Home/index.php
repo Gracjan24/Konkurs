@@ -43,7 +43,15 @@
     </div>
     <div class="glowna">
         <div class="kontent">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt maiores nobis, repellat hic commodi error inventore similique doloribus quis, quo voluptas et placeat possimus magnam labore facilis maxime dicta! Voluptatem?</p>
+            <form method="post">
+                <label for="wybor_tabeli">Wybierz zestaw słownictwa: </label>
+                <select name="wybor_tabeli" id="wybor_tabeli">
+                    <option value="zawod_it">TI</option>
+                    <option value="zawod_kuch">TŻiUG</option>
+                    <option value="zawod_te">TE</option>
+                </select>
+            </form>
+            <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt maiores nobis, repellat hic commodi error inventore similique doloribus quis, quo voluptas et placeat possimus magnam labore facilis maxime dicta! Voluptatem?</p> -->
             <img src="../../../image/homepicture.jpg" alt="home">
         </div>
     </div>
