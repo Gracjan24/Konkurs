@@ -51,7 +51,7 @@
                 if(isset($_POST['losowanie'])) {
                     $conn = mysqli_connect('localhost', 'root', '', 'baza');
                     $rand = rand(1, 4);
-                    $zapytanie_pol = "SELECT `pol`, `ang` FROM $tabela WHERE id = ".$rand."";
+                    $zapytanie_pol = "SELECT `pol`, `ang` FROM $tabela ORDER BY RAND()";
                     $result = mysqli_query($conn, $zapytanie_pol);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
