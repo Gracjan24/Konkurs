@@ -59,5 +59,10 @@
             $sql = "SELECT *  FROM `users` WHERE `ID` = '$id_user'";
             return ($this -> connection) -> query($sql) -> fetch_assoc()['nickname'];
         }
+
+        public function wybor($wybor) {
+            $this -> wybor = $wybor;
+            return $_SESSION['wybor'];
+        }
     }
 ?>

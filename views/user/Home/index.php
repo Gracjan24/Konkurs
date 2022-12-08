@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" class="css">
-    <?php include '../../../classes/auth.php'; ?>
+    <?php @include '../../../classes/auth.php'; ?>
+    <?php @include '../../../views/head.php'; ?>
 </head>
 <body>
     <div class="baner">
@@ -18,13 +19,6 @@
     </div>
     <div class="navv">
         <div class="nav" id="nav">
-            <!-- <button>zadanie 1</button>
-            <button>zadanie 2</button>
-            <button>zadanie 3</button>
-            <button>dodawanie</button>
-            <button>pomoc</button>
-            <button>wyloguj</button>
-            <button>glowna</button> -->
             <img src="../../../style/house-solid.svg" id="glowna" title="Wróć do strony głównej" alt="glowna" onclick="window.open('./index.php','_self')">
             <p onclick="baroc()">▼ Zadania</p>
             <p> </p>
@@ -50,16 +44,15 @@
                     <option value="zawod_kuch">TŻiUG</option>
                     <option value="zawod_te">TE</option>
                     <option value="zawod_mps">TPS</option>
-                </select>
+                </select><br>
+                <button type="submit" name="zapisz">Zatwierdź zmianę zawodu</button>
             </form>
-            <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt maiores nobis, repellat hic commodi error inventore similique doloribus quis, quo voluptas et placeat possimus magnam labore facilis maxime dicta! Voluptatem?</p> -->
             <img src="../../../image/homepicture.jpg" alt="home">
         </div>
     </div>
     <div class="hidden">
     <?php
             if(isset($_POST['wyloguj'])) {
-                // session_unset();
                 session_destroy();
                 header("location: ../../../index.php");
             }
