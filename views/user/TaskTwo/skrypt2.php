@@ -64,7 +64,7 @@
         <div class="blok">
         <?php
             if(isset($_POST['losowanie'])) {
-                $conn = mysqli_connect('localhost', 'root', '', 'baza');
+                $conn = Db::connect();
                 $rand = rand(1,6);
                 $zapytanie = "SELECT `pol`, `ang`, `bad`, `wrong` FROM zawod_it WHERE id = ".$rand."";
                 $result = mysqli_query($conn, $zapytanie);

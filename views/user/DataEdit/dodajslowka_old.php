@@ -62,7 +62,7 @@
                     <button type="submit">Prześlij</button>
                 </form>
                 <?php
-                $conn = mysqli_connect("localhost", "root", "", "baza");
+                $conn = Db::connect();
                 if(isset($_POST['text'])) {
                     $tabela = $_POST['tabela'];
                     $ang = $_POST['ang'];

@@ -49,7 +49,7 @@
                         return $str;
                     }
                     if(isset($_POST['losowanie'])) {
-                        $conn = mysqli_connect('localhost', 'root', '', 'baza');
+                        $conn = Db::connect();
                         $rand = rand(1, 4);
                         $zapytanie_pol = "SELECT `ang`, `text` FROM zawod_it WHERE id = ".$rand."";
                         $result = mysqli_query($conn, $zapytanie_pol);
