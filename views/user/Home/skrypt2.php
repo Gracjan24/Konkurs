@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../Home/style1.css">
     <link rel="stylesheet" href="../Home/style.css" class="css">
-    <link rel="stylesheet" href="../../../style/styleTtwo.css">
+    <link rel="stylesheet" href="style2.css">
     <?php include '../../../classes/auth.php'; ?>
 </head>
 <body>
@@ -63,10 +63,11 @@
         </form>
         <div class="blok">
         <?php
+            $tabela = $_COOKIE['wybor'];
             if(isset($_POST['losowanie'])) {
                 $conn = mysqli_connect('localhost', 'root', '', 'baza');
                 $rand = rand(1,6);
-                $zapytanie = "SELECT `pol`, `ang`, `bad`, `wrong` FROM zawod_it WHERE id = ".$rand."";
+                $zapytanie = "SELECT `pol`, `ang`, `bad`, `wrong` FROM $tabela WHERE id = ".$rand."";
                 $result = mysqli_query($conn, $zapytanie);
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
