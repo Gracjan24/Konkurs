@@ -37,7 +37,7 @@
     </div>
     <div class="glowna">
         <div class="kontent">
-            <form method="post">
+            <form method="post" id=glpost>
                 <label for="wybor_tabeli">Wybierz zestaw słownictwa: </label>
                 <select name="wybor_tabeli" id="wybor_tabeli">
                     <option value="zawod_it">TI</option>
