@@ -18,13 +18,6 @@
     </div>
     <div class="navv">
         <div class="nav" id="nav">
-            <!-- <button>zadanie 1</button>
-            <button>zadanie 2</button>
-            <button>zadanie 3</button>
-            <button>dodawanie</button>
-            <button>pomoc</button>
-            <button>wyloguj</button>
-            <button>glowna</button> -->
             <img src="../../../style/house-solid.svg" id="glowna" title="Wróć do strony głównej" alt="glowna" onclick="window.open('../Home/index.php','_self')">
             <p onclick="baroc()">▼ Zadania</p>
             <p> </p>
@@ -49,6 +42,11 @@
             <div class="pol">
             Przetlumacz wyraz na jezyk angielski<br><br>
             <?php
+                function change($str) {
+                    $str = str_ireplace(' ', '', $str);
+                    $str = strtolower($str);
+                    return $str;
+                }
                 if(isset($_POST['losowanie'])) {
                     $conn = mysqli_connect('localhost', 'root', '', 'baza');
                     $rand = rand(1, 4);
@@ -61,10 +59,11 @@
                         }
                     }
                     echo  $_SESSION['pol'];
+                    $_SESSION['ang'] = change($_SESSION['ang']);
                 }
                 if(isset($_POST['sprawdz'])) {
                     $answer = $_POST['answer'];
-                    // echo $answer;
+                    $answer = change($answer);
                     if ($answer == $_SESSION['ang']) {
                         echo 'dobrze';
                     } else {
@@ -91,7 +90,6 @@
     <div class="hidden">
     <?php
             if(isset($_POST['wyloguj'])) {
-                // session_unset();
                 session_destroy();
                 header("location: ../../../index.php");
             }
@@ -135,5 +133,8 @@
         buttonik.click();
     }
     </script>
+    <?php 
+        echo (new Auth())->wybor(@$_SESSION['wybor']);
+    ?>
 </body>
 </html>

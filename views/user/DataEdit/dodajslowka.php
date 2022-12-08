@@ -45,11 +45,11 @@
         <div class="kontent">
             <div class="main">
         <form method="post" class="formularz" autocomplete="off">
-                    <label for="tabela">Wybierz tabelę, do której ma być wprowadzone słówko</label>
+                    <!-- <label for="tabela">Wybierz tabelę, do której ma być wprowadzone słówko</label>
                     <select name="tabela" id="tabela">
                         <option value="zawod_it">Technik Informatyk</option>
                         <option value="zawod_kuch">Technik Żywienia i Usług Gastronomicznych</option>
-                    </select> <br>
+                    </select> <br> -->
                     <label for="ang">Słowo po angielsku: </label>
                     <input type="text" name="ang"> <br>
                     <label for="pol">Znaczenie po polsku: </label>

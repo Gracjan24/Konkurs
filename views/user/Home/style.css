@@ -39,20 +39,36 @@ body {
     align-items: center;
     justify-content: center;
 }
-/* button {
-    width: 90px;
+#glpost > button {
+    width: 20vh;
     margin: auto;
     outline: none;
     border: none;
-    background-color: white;
+    background-color: #387cf0;
     padding: 1vh 10px;
     border-radius: 6px;
     transition-duration: 0.4s;
+    margin-top: 3vh;
 }
-button:hover {
+#glpost > button:hover {
     background-color: #2367dd;
     color: white;
-} */
+}
+.formularz > button {
+    width: 20vh;
+    margin: auto;
+    outline: none;
+    border: none;
+    background-color: #387cf0;
+    padding: 1vh 10px;
+    border-radius: 6px;
+    transition-duration: 0.4s;
+    margin-top: 3vh;
+}
+.formularz > button:hover {
+    background-color: #2367dd;
+    color: white;
+}
 
 .glowna {
     width: 100%;
@@ -152,4 +168,10 @@ button:hover {
 .kontent > a {
     text-decoration: none;
     font-size: larger;
+}
+.formularz {
+    font-size: 150%
+}
+.formularz > input {
+    height: 2vh;
 }
