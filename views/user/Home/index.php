@@ -49,6 +49,7 @@
                     <option value="zawod_it">TI</option>
                     <option value="zawod_kuch">TŻiUG</option>
                     <option value="zawod_te">TE</option>
+                    <option value="zawod_mps">TPS</option>
                 </select>
             </form>
             <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt maiores nobis, repellat hic commodi error inventore similique doloribus quis, quo voluptas et placeat possimus magnam labore facilis maxime dicta! Voluptatem?</p> -->
