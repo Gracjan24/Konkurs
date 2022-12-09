@@ -26,9 +26,9 @@
         </div>
     </div>
     <div id="podstrona">
-        <a href="../TaskOne/skrypt1.php">Zadanie 1</a>
-        <a href="../TaskTwo/skrypt2.php">Zadanie 2</a>
-        <a href="../TaskThree/skrypt3.php">Zadanie 3</a>
+        <a href="./skrypt1.php">Zadanie 1</a>
+        <a href="./skrypt2.php">Zadanie 2</a>
+        <a href="./skrypt3.php">Zadanie 3</a>
     </div>
     <div id="podstrona1">
         <a href="../DataEdit/dodajslowka.php">Dodaj słówka do bazy słów</a>
@@ -42,6 +42,7 @@
             <div class="pol">
             Przetlumacz wyraz na jezyk angielski<br><br>
             <?php
+                $tabela = $_COOKIE['wybor'];
                 function change($str) {
                     $str = str_ireplace(' ', '', $str);
                     $str = strtolower($str);
@@ -50,7 +51,7 @@
                 if(isset($_POST['losowanie'])) {
                     $conn = Db::connect();
                     $rand = rand(1, 4);
-                    $zapytanie_pol = "SELECT `pol`, `ang` FROM zawod_it WHERE id = ".$rand."";
+                    $zapytanie_pol = "SELECT `pol`, `ang` FROM $tabela ORDER BY RAND()";
                     $result = mysqli_query($conn, $zapytanie_pol);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -133,8 +134,5 @@
         buttonik.click();
     }
     </script>
-    <?php 
-        echo (new Auth())->wybor(@$_SESSION['wybor']);
-    ?>
 </body>
 </html>

@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    setcookie('wybor', 'zawod_it');
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,8 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" class="css">
-    <?php @include '../../../classes/auth.php'; ?>
-    <?php @include '../../../views/head.php'; ?>
+    <?php include '../../../classes/auth.php'; ?>
 </head>
 <body>
     <div class="baner">
@@ -27,9 +29,9 @@
         </div>
     </div>
     <div id="podstrona">
-        <a href="../TaskOne/skrypt1.php">Zadanie 1</a>
-        <a href="../TaskTwo/skrypt2.php">Zadanie 2</a>
-        <a href="../TaskThree/skrypt3.php">Zadanie 3</a>
+        <a href="./skrypt1.php">Zadanie 1</a>
+        <a href="./skrypt2.php">Zadanie 2</a>
+        <a href="./skrypt3.php">Zadanie 3</a>
     </div>
     <div id="podstrona1">
         <a href="../DataEdit/dodajslowka.php">Dodaj słówka do bazy słów</a>
@@ -37,7 +39,7 @@
     </div>
     <div class="glowna">
         <div class="kontent">
-            <form method="post" id=glpost>
+            <form method="post" id="glpost">
                 <label for="wybor_tabeli">Wybierz zestaw słownictwa: </label>
                 <select name="wybor_tabeli" id="wybor_tabeli">
                     <option value="zawod_it">TI</option>
@@ -96,5 +98,12 @@
         buttonik.click();
     }
     </script>
+    <?php
+        if(isset($_POST['zapisz'])) {
+            $value = $_POST['wybor_tabeli'];
+            setcookie('wybor', $value);
+            echo $_COOKIE['wybor'];
+        }
+    ?>
 </body>
 </html>
