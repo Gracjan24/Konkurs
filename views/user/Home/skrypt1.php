@@ -26,13 +26,13 @@
         </div>
     </div>
     <div id="podstrona">
-        <a href="./skrypt1.php">Zadanie 1</a>
-        <a href="./skrypt2.php">Zadanie 2</a>
-        <a href="./skrypt3.php">Zadanie 3</a>
+        <a href=" <?php echo Db::getLink('views/user/Home/skrypt1.php'); ?>">Zadanie 1</a>
+        <a href=" <?php echo Db::getLink('views/user/Home/skrypt2.php'); ?>">Zadanie 2</a>
+        <a href=" <?php echo Db::getLink('views/user/Home/skrypt3.php'); ?>">Zadanie 3</a>
     </div>
     <div id="podstrona1">
-        <a href="../DataEdit/dodajslowka.php">Dodaj słówka do bazy słów</a>
-        <a href="./help.php">Pomoc techniczna</a>
+        <a href="<?php echo Db::getLink('views/user/DataEdit/dodajslowka.php'); ?>">Dodaj słówka do bazy słów</a>
+        <a href="<?php echo Db::getLink('views/user/Home/help.php'); ?>">Pomoc techniczna</a>
     </div>
     <div class="glowna">
         <div class="kontener">

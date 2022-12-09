@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
     setcookie('wybor', 'zawod_it');
+  
 ?>
 <html lang="en">
 <head>
@@ -29,9 +30,10 @@
         </div>
     </div>
     <div id="podstrona">
-        <a href="./skrypt1.php">Zadanie 1</a>
-        <a href="./skrypt2.php">Zadanie 2</a>
-        <a href="./skrypt3.php">Zadanie 3</a>
+       
+        <a href=" <?php echo Db::getLink('views/user/Home/skrypt1.php'); ?>">Zadanie 1</a>
+        <a href=" <?php echo Db::getLink('views/user/Home/skrypt2.php'); ?>">Zadanie 2</a>
+        <a href=" <?php echo Db::getLink('views/user/Home/skrypt3.php'); ?>">Zadanie 3</a>
     </div>
     <div id="podstrona1">
         <a href="../DataEdit/dodajslowka.php">Dodaj słówka do bazy słów</a>
@@ -104,6 +106,7 @@
             setcookie('wybor', $value);
             echo $_COOKIE['wybor'];
         }
+        
     ?>
 </body>
 </html>

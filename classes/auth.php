@@ -1,6 +1,8 @@
 <?php
     session_start();
 include __DIR__.'/Db.php';
+ 
+
 
     class Auth extends Db {
         public $login;
