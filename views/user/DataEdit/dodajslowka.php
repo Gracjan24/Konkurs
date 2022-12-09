@@ -27,6 +27,7 @@
             <button>glowna</button> -->
             <img src="../../../style/house-solid.svg" id="glowna" title="Wróć do strony głównej" alt="glowna" onclick="window.open('../Home/index.php','_self')">
             <p onclick="baroc()">▼ Zadania</p>
+            <p> </p>
             <p onclick="baroc1()">Narzędzia ▼</p>
             <img src="../../../style/right-from-bracket-solid.svg" id="logout" title="Wyloguj się" onclick="wyloguj()" alt="Wyloguj się">
         </div>
@@ -43,12 +44,12 @@
     <div class="glowna">
         <div class="kontent">
             <div class="main">
-        <form method="post" class="formularz">
-                    <label for="tabela">Wybierz tabelę, do której ma być wprowadzone słówko</label>
+        <form method="post" class="formularz" autocomplete="off">
+                    <!-- <label for="tabela">Wybierz tabelę, do której ma być wprowadzone słówko</label>
                     <select name="tabela" id="tabela">
                         <option value="zawod_it">Technik Informatyk</option>
                         <option value="zawod_kuch">Technik Żywienia i Usług Gastronomicznych</option>
-                    </select> <br>
+                    </select> <br> -->
                     <label for="ang">Słowo po angielsku: </label>
                     <input type="text" name="ang"> <br>
                     <label for="pol">Znaczenie po polsku: </label>
@@ -63,7 +64,7 @@
                     <button type="submit">Prześlij</button>
                 </form>
                 <?php
-                $conn = mysqli_connect("localhost", "root", "", "baza");
+                $conn = Db::connect();
                 if(isset($_POST['text'])) {
                     $tabela = $_POST['tabela'];
                     $ang = $_POST['ang'];

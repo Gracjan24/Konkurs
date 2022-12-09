@@ -39,52 +39,31 @@ body {
     align-items: center;
     justify-content: center;
 }
-#glpost > button {
-    width: 20vh;
+/* button {
+    width: 90px;
     margin: auto;
     outline: none;
     border: none;
-    background-color: #387cf0;
+    background-color: white;
     padding: 1vh 10px;
     border-radius: 6px;
     transition-duration: 0.4s;
-    margin-top: 3vh;
 }
-#glpost > button:hover {
+button:hover {
     background-color: #2367dd;
     color: white;
-}
-.formularz > button {
-    width: 20vh;
-    margin: auto;
-    outline: none;
-    border: none;
-    background-color: #387cf0;
-    padding: 1vh 10px;
-    border-radius: 6px;
-    transition-duration: 0.4s;
-    margin-top: 3vh;
-}
-.formularz > button:hover {
-    background-color: #2367dd;
-    color: white;
-}
+} */
 
 .glowna {
     width: 100%;
     height: 78vh;
 
 }
-.kontent {
+/* .kontent {
     margin: auto;
     width: 60%;
     height: 100%;
     min-width: 500px;
-    text-align: center;
-}
-.kontent > form {
-    margin-top: 5vh;
-    font-size: larger;
 }
 .kontent > p {
     padding: 5vh 33%;
@@ -92,7 +71,7 @@ body {
 .kontent > img {
     padding: 5vh 33%;
     width: 34%;
-}
+} */
 #podstrona, #podstrona1 {
     background-color: #2367dd;
     width: 100%;
@@ -137,7 +116,14 @@ body {
     /* min-width: 150px; */
     cursor: pointer;
 }
-.nav > img {
+.nav > img#wyloguj {
+    height: 3vh;
+    width: 3vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    cursor: pointer;
+}
+.nav > img#glowna {
     height: 3vh;
     width: 3vh;
     margin-left: 3vh;
@@ -165,13 +151,79 @@ body {
     margin-top: 50px;
     text-align: center;
 }
-.kontent > a {
-    text-decoration: none;
-    font-size: larger;
+.kontener {
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    margin-top: 10px;
 }
-.formularz {
-    font-size: 150%
+.window {
+    position: relative;
+    max-width: 850px;
+    width: 100%;
+    padding: 40px 30px;
+    /* box-shadow: 0 5px 10px rgba(0,0,0,0.2); */
+    background: #fff;
 }
-.formularz > input {
-    height: 2vh;
+.tytul, .pol {
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    width: 100%;
+    text-align: center;
+}
+.hrtytul {
+    height: 5px;
+    background: #3973d8;
+    position: relative;
+    left: 33%;
+    width: 34%;
+}
+.pol {
+    height: 10vh;
+    text-align: center;
+    margin-top: 3vh;
+    margin-bottom: 7vh;
+}
+#answer {
+    height: 100%;
+    width: 75%;
+    outline: none;
+    border: none;
+    /* padding: 0 30px; */
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    text-align: center;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    margin-bottom: 3vh;
+}
+.losuj, .spr {
+    /* margin-top: 3vh; */
+    width: 100%;
+    height: 10vh;
+    margin: auto;
+}
+button {
+    width: 75%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    height: 4vh;
+    background: #3973d8;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.4 ease;
+}
+button:hover {
+    background: #1e4385;
+}
+#losuj {
+    margin-top: 3vh;
 }

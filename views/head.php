@@ -9,5 +9,6 @@ if(isset($_POST['rejestracja'])) {
 if(isset($_POST['login'])) { 
     $auth = (new Auth())->login($_POST['emaillogin'], $_POST['haslologin']);
 }
-
- 
+if(isset($_POST['zapisz'])) {
+    $wybor = (new Auth())->wybor($_POST['wybor_tabeli']);
+}

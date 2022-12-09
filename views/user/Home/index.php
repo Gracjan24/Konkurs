@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" class="css">
-    <?php include '../../../classes/auth.php'; ?>
+    <?php @include '../../../classes/auth.php'; ?>
+    <?php @include '../../../views/head.php'; ?>
 </head>
 <body>
     <div class="baner">
@@ -17,16 +18,10 @@
         </p>
     </div>
     <div class="navv">
-        <div class="nav">
-            <!-- <button>zadanie 1</button>
-            <button>zadanie 2</button>
-            <button>zadanie 3</button>
-            <button>dodawanie</button>
-            <button>pomoc</button>
-            <button>wyloguj</button>
-            <button>glowna</button> -->
+        <div class="nav" id="nav">
             <img src="../../../style/house-solid.svg" id="glowna" title="Wróć do strony głównej" alt="glowna" onclick="window.open('./index.php','_self')">
             <p onclick="baroc()">▼ Zadania</p>
+            <p> </p>
             <p onclick="baroc1()">Narzędzia ▼</p>
             <img src="../../../style/right-from-bracket-solid.svg" id="logout" title="Wyloguj się" onclick="wyloguj()" alt="Wyloguj się">
         </div>
@@ -42,14 +37,22 @@
     </div>
     <div class="glowna">
         <div class="kontent">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt maiores nobis, repellat hic commodi error inventore similique doloribus quis, quo voluptas et placeat possimus magnam labore facilis maxime dicta! Voluptatem?</p>
+            <form method="post" id=glpost>
+                <label for="wybor_tabeli">Wybierz zestaw słownictwa: </label>
+                <select name="wybor_tabeli" id="wybor_tabeli">
+                    <option value="zawod_it">TI</option>
+                    <option value="zawod_kuch">TŻiUG</option>
+                    <option value="zawod_te">TE</option>
+                    <option value="zawod_mps">TPS</option>
+                </select><br>
+                <button type="submit" name="zapisz">Zatwierdź zmianę zawodu</button>
+            </form>
             <img src="../../../image/homepicture.jpg" alt="home">
         </div>
     </div>
     <div class="hidden">
     <?php
             if(isset($_POST['wyloguj'])) {
-                // session_unset();
                 session_destroy();
                 header("location: ../../../index.php");
             }
