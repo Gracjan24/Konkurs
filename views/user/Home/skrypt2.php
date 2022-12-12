@@ -48,9 +48,9 @@
         </div>
     </div>
     <div id="podstrona">
-        <a href="../TaskOne/skrypt1.php">Zadanie 1</a>
-        <a href="../TaskTwo/skrypt2.php">Zadanie 2</a>
-        <a href="../TaskThree/skrypt3.php">Zadanie 3</a>
+        <a href="./skrypt1.php">Zadanie 1</a>
+        <a href="./skrypt2.php">Zadanie 2</a>
+        <a href="./skrypt3.php">Zadanie 3</a>
     </div>
     <div id="podstrona1">
         <a href="../DataEdit/dodajslowka.php">Dodaj słówka do bazy słów</a>
