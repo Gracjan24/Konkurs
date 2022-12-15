@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-    setcookie('wybor', 'zawod_it');
+    setcookie('wybor', 'zawod_it', 0, '/');
 ?>
 <html lang="en">
 <head>

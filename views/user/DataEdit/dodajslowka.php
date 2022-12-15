@@ -9,6 +9,7 @@
     <?php include '../../../classes/auth.php'; ?>
 </head>
 <body>
+    <!-- <?php echo $_COOKIE['wybor'];?> -->
     <div class="baner">
         <img src="../../../image/logopasek.png" alt="logo" title="ZSCKU" class="logo">
         <p>Witaj 
@@ -18,13 +19,6 @@
     </div>
     <div class="navv">
         <div class="nav">
-            <!-- <button>zadanie 1</button>
-            <button>zadanie 2</button>
-            <button>zadanie 3</button>
-            <button>dodawanie</button>
-            <button>pomoc</button>
-            <button>wyloguj</button>
-            <button>glowna</button> -->
             <img src="../../../style/house-solid.svg" id="glowna" title="Wróć do strony głównej" alt="glowna" onclick="window.open('../Home/index.php','_self')">
             <p onclick="baroc()">▼ Zadania</p>
             <p> </p>
@@ -45,11 +39,6 @@
         <div class="kontent">
             <div class="main">
         <form method="post" class="formularz" autocomplete="off">
-                    <!-- <label for="tabela">Wybierz tabelę, do której ma być wprowadzone słówko</label>
-                    <select name="tabela" id="tabela">
-                        <option value="zawod_it">Technik Informatyk</option>
-                        <option value="zawod_kuch">Technik Żywienia i Usług Gastronomicznych</option>
-                    </select> <br> -->
                     <label for="ang">Słowo po angielsku: </label>
                     <input type="text" name="ang"> <br>
                     <label for="pol">Znaczenie po polsku: </label>
@@ -60,6 +49,13 @@
                     <input type="text" name="bad"> <br>
                     <label for="text">Definicja (do zadania 3):</label>
                     <input type="text" name="text"> <br>
+                    <label for="tabela">Wybierz zawód:</label>
+                    <select name="tabela">
+                        <option value="zawod_it">TI</option>
+                        <option value="zawod_kuch">TŻiUG</option>
+                        <option value="zawod_te">TE</option>
+                        <option value="zawod_mps">TPS</option>
+                    </select><br>
                     <button type="reset">Resetuj</button>
                     <button type="submit">Prześlij</button>
                 </form>

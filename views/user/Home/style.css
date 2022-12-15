@@ -134,7 +134,6 @@ body {
     display: block;
     transition: 0.3s;
     padding-inline: 5px;
-    /* min-width: 150px; */
     cursor: pointer;
 }
 .nav > img {
