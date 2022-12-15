@@ -40,15 +40,16 @@ body {
     justify-content: center;
 }
 #glpost > button {
-    width: 20vh;
+    width: fit-content;
     margin: auto;
     outline: none;
     border: none;
     background-color: #387cf0;
-    padding: 1vh 10px;
+    padding: 2vh 30px;
     border-radius: 6px;
     transition-duration: 0.4s;
     margin-top: 3vh;
+    font-size: 100%;
 }
 #glpost > button:hover {
     background-color: #2367dd;
@@ -84,7 +85,7 @@ body {
 }
 .kontent > form {
     margin-top: 5vh;
-    font-size: larger;
+    font-size: 170%;
 }
 .kontent > p {
     padding: 5vh 33%;
@@ -173,4 +174,16 @@ body {
 }
 .formularz > input {
     height: 2vh;
+}
+.kontent > form > select {
+    width: fit-content;
+    padding: 10px;
+    font-size: 60%;
+    text-align: center;
+}
+.main > form > select {
+    width: fit-content;
+    padding: 5px 10px;
+    font-size: 60%;
+    text-align: center;
 }
