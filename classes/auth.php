@@ -61,7 +61,7 @@
         }
 
         public function wybor($wybor) {
-            $this -> wybor = $wybor;
+            $this -> $wybor = $wybor;
             return $_SESSION['wybor'];
         }
     }
